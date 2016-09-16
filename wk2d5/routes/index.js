@@ -4,7 +4,11 @@ var tasks = require('../lib/tasks');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Tasks', tasks: tasks.all() });
+  tasks.all(function(err, tasks) {
+    if (err) return res.render(err);
+    res.render('index', { title: 'Tasks', tasks: tasks });
+  });
+
 });
 
 router.get('/new', function(req, res, next) {
@@ -12,31 +16,46 @@ router.get('/new', function(req, res, next) {
 });
 
 router.post('/new', function(req, res, next) {
-  tasks.insert({name: req.body.name, completed: false});
-  res.redirect('/');
+  tasks.insert({name: req.body.name, completed: false}, function(err) {
+    if (err) return res.redirect('/new');
+    res.redirect('/');
+  });
+
 });
 
-router.get('/edit/:index', function(req, res, next) {
-  res.render('edit', { title: 'Edit Task', task: tasks.get(req.params.index)});
+router.get('/edit/:id', function(req, res, next) {
+  tasks.get(req.params.id, function(err, task) {
+    if (err) return res.send(err);
+    res.render('edit', { title: 'Edit Task', task: task});
+  })
+
 });
 
-router.post('/edit/:index', function(req, res, next) {
-  task = tasks.get(req.params.index);
-  task.name = req.body.name;
-  tasks.update(req.params.index, task);
-  res.redirect('/');
+router.post('/edit/:id', function(req, res, next) {
+  tasks.update(req.params.id, req.body, function(err) {
+    if (err) return res.send(err);
+    res.redirect('/')
+  });
 });
 
-router.get('/delete/:index', function(req, res, next) {
-  tasks.delete(req.params.index);
-  res.redirect('/');
+router.get('/delete/:id', function(req, res, next) {
+  tasks.delete(req.params.id, function(err) {
+    if (err) return res.send(err);
+    res.redirect('/');
+  });
 });
 
-router.get('/toggle_completed/:index', function(req, res, next) {
-  var task = tasks.get(req.params.index);
-  task.completed = !task.completed;
-  tasks.update(req.params.index, task);
-  res.redirect('/');
+router.get('/toggle_completed/:id', function(req, res, next) {
+  tasks.get(req.params.id, function(err, task) {
+    if (err) return res.send(err);
+    task.completed = !task.completed;
+    tasks.update(req.params.id, task, function(err) {
+      if (err) return res.send(err);
+      res.redirect('/');
+    });
+  });
+
+
 });
 
 module.exports = router;
