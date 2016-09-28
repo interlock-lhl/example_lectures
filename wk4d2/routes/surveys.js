@@ -3,13 +3,15 @@ const pg = require('pg');
 const survey = require('../lib/survey');
 
 router.get('/surveys', function(req, res) {
-  survey.all(req.pg_client, (err, surveys) => {
+  survey.all.then( (surveys) => {
     if (err) return res.send(err);
 
     // return some JSON
     res.set('Content-Type', 'application/json');
     res.send(JSON.stringify(surveys));
     // res.send(results.rows);
+  }).error( (err) => {
+    res.sendStatus(502).send(err);
   });
 
   // res.sendStatus(404);
@@ -17,7 +19,7 @@ router.get('/surveys', function(req, res) {
 
 router.get('/surveys/:id', function(req, res) {
 
-  survey.findById(req.pg_client, req.params.id, (err, survey) => {
+  survey.findById( req.params.id, (err, survey) => {
     if (err) return res.send(err);
 
     // if (results.rows.length == 0) {

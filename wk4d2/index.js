@@ -18,15 +18,15 @@ app.use(function(req,res,next) {
 });
 
 // connect to db
-app.use(function(req, res, next) {
-  req.pg_client = new pg.Client(process.env.POSTGRES_URI || {database: 'quizes'} );
-  req.pg_client.connect(function(err) {
-    if (err) {
-      return res.sendStatus(500);
-    }
-    next();
-  });
-});
+// app.use(function(req, res, next) {
+//   req.pg_client = new pg.Client(process.env.POSTGRES_URI || {database: 'quizes'} );
+//   req.pg_client.connect(function(err) {
+//     if (err) {
+//       return res.sendStatus(500);
+//     }
+//     next();
+//   });
+// });
 
 
 app.use(require('./routes'));
