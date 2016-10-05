@@ -4,9 +4,7 @@ import Header from '../components/Header.jsx'
 import Footer from '../components/Footer.jsx'
 
 class App extends Component {
-  componentDidMount() {
 
-  }
   render() {
     return (
       <div className="container">
