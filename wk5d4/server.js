@@ -1,18 +1,25 @@
-var webpack = require('webpack');
-var WebpackDevServer = require('webpack-dev-server');
-var config = require('./webpack.config');
+const express = require('express');
+const app = express()
+const webpack = require('webpack');
+const webpackDevMiddleware = require('webpack-dev-middleware');
+const config = require('./webpack.config');
+const compiler = webpack(config);
 
-new WebpackDevServer(webpack(config), {
-    publicPath: config.output.publicPath,
-    watchOptions: {
-      aggregateTimeout: 300,
-      poll: 1000
-    }
-  })
-  .listen(3000, '0.0.0.0', function (err, result) {
-    if (err) {
-      console.log(err);
-    }
+app.set('view engine', 'ejs');
 
-    console.log('Running at http://0.0.0.0:3000');
-  });
+// setup webpack middleware
+app.use(webpackDevMiddleware(compiler, {
+  publicPath: config.output.publicPath,
+  watchOptions: {
+    aggregateTimeout: 300,
+    poll: 1000
+  }
+}));
+
+// routing
+app.use(require('./routes/home'));
+
+// spin up our express server
+app.listen(3000, function () {
+  console.log('Example app listening on port 3000!');
+});
