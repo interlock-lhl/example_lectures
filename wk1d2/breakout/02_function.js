@@ -5,9 +5,16 @@ function sayName(name, isDr) {
     return "Dr. " + name;
   }
 
-  if (isDr) {
+  if (isDr === true) {
     console.log(doctor());
   } else {
     console.log(name);
   }
 }
+
+sayName(name);
+sayName('Don');
+sayName('David', true);
+// doctor();
+sayName('James',[]);
+sayName('Monica', 5 > 3);
