@@ -5,6 +5,8 @@ const webpackDevMiddleware = require('webpack-dev-middleware');
 const config = require('./webpack.config');
 const compiler = webpack(config);
 
+const port = process.env.PORT || 3000;
+
 app.set('view engine', 'ejs');
 
 // setup webpack middleware
@@ -16,10 +18,12 @@ app.use(webpackDevMiddleware(compiler, {
   }
 }));
 
+app.use(require("webpack-hot-middleware")(compiler));
+
 // routing
 app.use(require('./routes/home'));
 
 // spin up our express server
-app.listen(3000, function () {
-  console.log('Example app listening on port 3000!');
+app.listen(port, function () {
+  console.log('Example app listening on port:', port);
 });

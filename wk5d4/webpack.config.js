@@ -4,11 +4,13 @@ var webpack = require('webpack');
 module.exports = {
   devtool: 'eval',
   entry: [
-    'webpack-dev-server/client?http://localhost:3000',
+    'webpack/hot/dev-server',
+    'webpack-hot-middleware/client',
+    // 'webpack-dev-server/client?http://localhost:3000',
     './src/index.jsx'
   ],
   output: {
-    path: path.join(__dirname, 'dist'),
+    path: '/',
     filename: 'bundle.js',
     publicPath: '/build/'
   },
@@ -24,5 +26,13 @@ module.exports = {
         loaders: ["style", "css", "sass"]
       }
     ]
-  }
+  },
+  plugins: [
+    // Webpack 1.0
+    new webpack.optimize.OccurenceOrderPlugin(),
+    // Webpack 2.0 fixed this mispelling
+    // new webpack.optimize.OccurrenceOrderPlugin(),
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NoErrorsPlugin()
+  ]
 }
