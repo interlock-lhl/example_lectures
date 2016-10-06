@@ -15,13 +15,16 @@ class Slack extends EventEmitter {
     this.bot.listen({token: this.token});
   }
 
+  // handle our hello message (confirms connection to slack)
   _handleHello(message) {
     console.log(`Got a message: ${message.type}`);
   }
 
+  // handle messages, all messages come here
   _handleMessage(message) {
     var self = this;
-    console.log(`Got a message: ${message.type}`);
+
+    // slack returns channel names and user names as unique identifiers, we need to look them up
     async.parallel([
       function(cb) {
         self._getUser(message.user, cb);
@@ -37,6 +40,7 @@ class Slack extends EventEmitter {
     });
   }
 
+  // lookup a user identifier via the slack API
   _getUser(user, cb) {
     if (this.users[user]) {
       setImmediate(cb, null, this.users[user]);
@@ -52,6 +56,7 @@ class Slack extends EventEmitter {
     });
   }
 
+  // look up a channel identifier via slack API
   _getChannel(channel, cb) {
     if (this.channels[channel]) {
       setImmediate(cb, null, this.channels[channel]);
