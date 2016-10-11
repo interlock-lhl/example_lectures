@@ -10,4 +10,13 @@
 
 # Resources
 
-nodemon: `nodemon -L <program.js>`
+- https://nodejs.org/dist/latest-v6.x/docs/api/http.html
+- https://github.com/remy/nodemon
+- https://expressjs.com/
+- http://www.embeddedjs.com/
+
+## Nodemon
+
+`npm install -g nodemon`
+
+Then run it with -L: `nodemon -L <program.js>`
