@@ -7,3 +7,7 @@
 - Doing the same thing with Express.js
 - Middleware
 - EJS
+
+# Resources
+
+nodemon: `nodemon -L <program.js>`

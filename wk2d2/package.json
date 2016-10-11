@@ -1,0 +1,16 @@
+{
+  "name": "wk2d2",
+  "version": "1.0.0",
+  "description": "- Making an HTTP server with node.js http module   - request and response   - multiple paths - Doing the same thing with Express.js - Middleware - EJS",
+  "main": "express.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "ejs": "^2.5.2",
+    "express": "^4.14.0"
+  }
+}
