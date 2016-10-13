@@ -20,7 +20,13 @@
         <td><%= post.publish %></td>
         <td><%= link_to 'Show', post %></td>
         <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>
+          <!-- <form method="post" action="<%= post_path(post) %>">
+            <input type="hidden" name="_method" value="delete"/>
+            <input type="submit" />
+          </form> -->
+          <%= link_to 'Destroy', post, data: { '2-method': 'delete', confirm: 'Are you sure?' } %>
+        </td>
       </tr>
     <% end %>
   </tbody>
