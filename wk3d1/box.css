@@ -1,0 +1,78 @@
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+p {
+  border: 5px solid red;
+  padding: 5px;
+  margin: 10px 0px;
+}
+
+article {
+  border: 1px solid green;
+  padding: 5px;
+}
+
+section {
+  width: 80%;
+  float: left;
+}
+
+aside {
+  width: 20%;
+  float: left;
+  border: 1px solid pink;
+  position: relative;
+}
+
+nav {
+  border: 1px solid blue;
+}
+
+nav > div {
+  border: 1px solid black;
+  width: 20%;
+  text-align: center;
+}
+
+nav > div.left {
+  /*display: inline-block;*/
+  float: left;
+}
+
+nav > div.right {
+  /*display: inline-block;*/
+  float: right;
+}
+
+nav:after, main:after {
+  content: ".";
+  visibility: hidden;
+  display: block;
+  height: 0;
+  clear: both;
+}
+
+footer {
+  border: 5px solid black;
+  width: 40%;
+  margin: 0 auto;
+  position: absolute;
+  bottom: 0;
+  left: 30%;
+}
+
+.share {
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  top: 5px;
+  right: 18px;
+}
+
+.float-clear {
+  clear: both;
+}
