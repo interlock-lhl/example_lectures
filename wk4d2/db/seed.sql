@@ -130,3 +130,8 @@ INSERT INTO "tracks" (title, number, album_id) VALUES ('Motherboard', 10, 8);
 INSERT INTO "tracks" (title, number, album_id) VALUES ('Fragments of Time', 11, 8);
 INSERT INTO "tracks" (title, number, album_id) VALUES ('Doin It Right', 12, 8);
 INSERT INTO "tracks" (title, number, album_id) VALUES ('Contact', 13, 8);
+
+-- update our table sequences because we inserted with fixed primary keys for some tables
+ALTER SEQUENCE tags_id_seq RESTART WITH 5;
+ALTER SEQUENCE albums_id_seq RESTART WITH 9;
+ALTER SEQUENCE artists_id_seq RESTART WITH 5;
