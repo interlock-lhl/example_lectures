@@ -11,7 +11,7 @@ store.subscribe(() =>
 let id = 1
 setInterval(() =>
   store.dispatch(addQuestion({text: "Q" + id, who: 'interlock', id: id++}))
-, 10000)
+, 5000)
 
 
 export default store;

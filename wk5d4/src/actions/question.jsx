@@ -15,5 +15,5 @@ export const delQuestion = question => ({
 })
 
 export const fetchQuestions = () => ({
-  type:  REQUEST_QUESTIONS
+  type: REQUEST_QUESTIONS
 })

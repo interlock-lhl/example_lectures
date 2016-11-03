@@ -2,6 +2,11 @@ const slack = require('slack');
 const EventEmitter = require('events');
 const async = require('async');
 
+/**
+ * Slack class
+ *
+ * Wrapper to get real time slack messages and emit them as events via EventEmitter
+ */
 class Slack extends EventEmitter {
 
   constructor(token) {
