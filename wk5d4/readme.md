@@ -4,7 +4,7 @@ Chat Reflector 9000
 # Goals
 - Connect to slack via token
 - Watch for messages on specific channels that match the format: "Q: My question is, what is the meaning of life?"
-- Broadcast that question via a WebSocket
+- Broadcast that question via a WebSocket/Socket.io
 - WebSocket client display that message, who said it and when. Ideally in a large format for TV.
 - Client should allow selecting different channels to Watch
 
