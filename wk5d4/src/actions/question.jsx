@@ -6,7 +6,7 @@ export const DEL_QUESTION = 'DEL_ACTION'
 // action creators
 export const addQuestion = question => ({
   type: ADD_QUESTION,
-  question
+  question: question
 })
 
 export const delQuestion = question => ({

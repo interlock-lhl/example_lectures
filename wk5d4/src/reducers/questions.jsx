@@ -8,6 +8,9 @@ function questionsReducer(state = initialState, action) {
   switch (action.type) {
     case ADD_QUESTION:
       return [...state, action.question];
+    case DEL_QUESTION:
+      // find the question and remove from array
+      return state;
     default:
       return state;
   }

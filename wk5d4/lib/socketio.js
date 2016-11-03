@@ -17,15 +17,17 @@ module.exports = {
   },
 
   onConnection: function(socket) {
-    console.log(socket.id);
+    console.log('id', socket.id);
+    socket.emit('message', 'hello');
+
     // let id = 1;
     // setInterval(() => {
-    //   socket.emit('message', {
-    //     text: 'HEllo world',
+    //   socket.emit('question', {
+    //     text: 'Hello world',
     //     username: 'james',
     //     channel: 'lecture',
     //     id: id++
     //   });
-    // }, 1000)
+    // }, 1000);
   }
 };
