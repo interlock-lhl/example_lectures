@@ -1,4 +1,14 @@
 <article>
-  <h2><%= post.title %></h2>
-  <p><%= post.body %></p>
+  <h2>
+    <!-- <a href="/posts/<%= post.id %>"><%= post.title %></a> -->
+    <%= link_to post.title, post, style: 'border: 1px solid black' %>
+  </h2>
+  <p><%= truncate(post.body, length: 10) %></p>
+  <pre><%= post_url(post, a: 'cat') %></pre>
+  <!-- <p><%= insert_cat %></p> -->
+  <%= link_to 'Delete Post', post_path(post), method: :delete %>
+  <!-- <form method="post" action="<%= post_path(post) %>">
+    <input type="hidden" name="_method" value="delete" />
+    <input type="submit" value="del post" />
+  </form> -->
 <article>
