@@ -1,0 +1,26 @@
+<% include ../partials/header.ejs %>
+
+<table>
+<tr>
+  <td><%= todo._id %></td>
+  <td><%= todo.title %></td>
+  <td><% if (todo.done) { %>
+    <span class="glyphicon glyphicon-ok"></span>
+    <% } else { %>
+      <span class="glyphicon glyphicon-remove"></span>
+    <% } %>
+  </td>
+  <td>
+    <% if (todo.done) { %>
+      <a href="#" class="btn btn-default">Undone</a>
+    <% } else { %>
+        <a href="#" class="btn btn-default">Done</a>
+    <% } %>
+    <form method="post" action="/todos/<%= todo._id %>?_method=DELETE">
+      <button class="btn btn-warning">Delete</button>
+    </form>
+  </td>
+</tr>
+</table>
+
+<% include ../partials/header.ejs %>

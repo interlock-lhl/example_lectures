@@ -1,4 +1,6 @@
-
+/**
+ * Our socket.io code to handle connections and related events
+ */
 
 module.exports = {
   io: null,

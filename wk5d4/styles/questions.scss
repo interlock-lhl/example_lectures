@@ -1,8 +1,16 @@
+.container {
+  position: relative;
+}
+
 ul.questions {
   border-radius: 5px;
   border: 1px solid black;
 }
 
-.questions li {
-  border-bottom: 5p solid black;
+@for $i from 1 through 6 {
+  .questions li:nth-child(#{$i}) {
+    opacity: 1 - ($i*.15);
+    // height: 20%;
+    border-bottom: 5p solid black;
+  }
 }
