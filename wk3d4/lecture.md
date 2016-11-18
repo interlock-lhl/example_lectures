@@ -22,12 +22,14 @@ var csv_data = [
 ```
 
 pros
+
 - fairly fast dev
 - human readable and editable
 - simple
 - quick to process, small sets of data
 
 cons
+
 - large CSV are inefficent
 - no useful data science
 - Not ACID compliant
@@ -38,15 +40,17 @@ cons
 
 eg.
 
-[default_todos.json]
+see `default_todos.json`
 
 pros
+
 - human readable and editable
 - more structured csv
 - types
 - simple with libs `JSON.stringify` `JSON.parse`
 
 cons
+
 - no ACID
 - still the whole file in to memory
 
