@@ -4,14 +4,14 @@
 
 - Use all the CPU cores, with puma, cluster or some other supervisor. Pm2 for node.js (https://github.com/Unitech/pm2)
 - Scale vertically first. More CPU/Memory on one machine.
-- Horizontal scaling means we need a Load Balancer
+- Horizontal (multiple services with their own IP's) scaling means we need a Load Balancer
 - http://stackoverflow.com/questions/11707879/difference-between-scaling-horizontally-and-vertically-for-databases
 
 ## Load Balancer
 
 - Starts off as one server that sends requests to your many web servers.
  - Can do Round Robin, or some are smart enough to choose a server that is not as busy.
- - HAProxy, Apache (great for SSL terminated traffic), Varnish (only with some abuse, but you get a caching server too!)
+ - HAProxy, Apache (great for SSL terminated traffic), Varnish (only with some abuse, but you get a caching server too!), Ngnix
  - EC2 on AWS also provides Load Balancers.
  - With multiple load balancers we can use DNS to balance requests to each load balancer
  - Or; do regional routing so traffic that is closer to one load balancer prefers that over further ones.
@@ -46,6 +46,7 @@
 - You can consider using a language/tool/service that specifically helps you solve problems
  - Rails for web
  - Node for API
+- Python/R for "big data"
 
 ## Web app optimizations that are not the above
 
@@ -54,12 +55,7 @@
   - Combine JS/CSS
   - Rewrite JS/CSS to have less spaces/syntax/etc
 - Order of loading assets on page (CSS before JS)
+  - JS at the bottom
 - Use the script tag async https://developer.mozilla.org/en/docs/Web/HTML/Element/script#Browser_compatibility
-- Reduce/combine DB queries and API queries
-
-## Docker Turbo Overview
-
-- Imagine a world where you can run multiple virtual machines, each one specifically for a services
-- Deployments are identical across all machines
-- Works well with service schedulers (they all support docker now, some even prefer it)
-- Save $$$ by using resources more efficiently
+- Reduce/combine DB queries and API queries.
+  - perhaps make the page itself return immediately while your server waits for everything to complete. Look fast to the user, but takes the same amount of time.
