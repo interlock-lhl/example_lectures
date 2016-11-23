@@ -34,6 +34,7 @@ clean up any mess the exception created.
 ### Promise Errors
 
 ### Wrappers to common npm's that add promises:
-- [request-promise]()
-- [pg-then]()
-- [promised-mongo]()
+- [request-promise](https://www.npmjs.com/package/request-promise)
+- [pg-then](https://www.npmjs.com/package/pg-then)
+- [promised-mongo](https://www.npmjs.com/package/promised-mongo)
+- [promisifier](https://www.npmjs.com/package/promisifier)
