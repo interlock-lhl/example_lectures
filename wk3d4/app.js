@@ -32,12 +32,15 @@ app.get("/todos/new", (req, res) => {
   res.render("todos/new");
 });
 
+<<<<<<< HEAD
 app.get("/todos/:id", (req, res) => {
   Todos.findById(req.params.id, (err, todo) => {
     res.render("todos/view", { todo: todo})
   });
 });
 
+=======
+>>>>>>> master
 // Create new todo in Mongo
 app.post("/todos", (req, res) => {
   const todo = { title: req.body.title, done: false };

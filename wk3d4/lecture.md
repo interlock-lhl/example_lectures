@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ### Persistence
 
 ### What is it?
@@ -54,11 +55,31 @@ cons
 - no ACID
 - still the whole file in to memory
 
+=======
+### Persistance
+
+### What is it?
+
+### CSV file
+
+eg
+
+pros/cons
+
+### JSON file
+
+eg
+
+pros/cons
+>>>>>>> master
 
 ### How would we work with in memory data like JSON for find, insert and delete?
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
 ### In come databases
 
 http://db-engines.com/en/ranking
@@ -67,6 +88,7 @@ http://db-engines.com/en/ranking
 
 Database -> Collections -> Documents
 
+<<<<<<< HEAD
 ### Database
 
 - service
@@ -83,6 +105,8 @@ Database -> Collections -> Documents
 
 ### Document
 - freeform json/js object
+=======
+>>>>>>> master
 
 ### Handy shell
 

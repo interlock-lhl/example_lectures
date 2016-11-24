@@ -13,7 +13,11 @@
     "body-parser": "^1.15.2",
     "ejs": "^2.5.2",
     "express": "^4.14.0",
+<<<<<<< HEAD
     "method-override": "^2.3.6",
     "mongodb": "^2.2.11"
+=======
+    "method-override": "^2.3.6"
+>>>>>>> master
   }
 }

@@ -16,9 +16,13 @@
   </thead>
 <% todos.forEach( (todo) => { %>
   <tr>
+<<<<<<< HEAD
     <td>
       <a href="/todos/<%= todo._id %>"><%= todo._id %></a>
     </td>
+=======
+    <td><%= todo._id %></td>
+>>>>>>> master
     <td><%= todo.title %></td>
     <td><% if (todo.done) { %>
       <span class="glyphicon glyphicon-ok"></span>
