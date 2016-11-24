@@ -1,4 +1,9 @@
+
 ## Errors and promises
+
+### Tip'O'The'Day
+
+`python -m SimpleHTTPServer 8080`
 
 ### Throw
 
@@ -28,6 +33,8 @@ clean up any mess the exception created.
 [try...catch](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch)
 
 ### Manual AJAX with XHR
+
+- https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/Using_XMLHttpRequest
 
 ### Callback errors
 
