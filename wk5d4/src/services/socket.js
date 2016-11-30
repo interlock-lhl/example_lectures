@@ -1,11 +1,12 @@
 
 var id = 1;
 
-// fake socket messages
+// fake socket messages emitter
 const SocketService = {
-  _questions: [],
-  _onCallbacks: [],
+  _questions: [], // Array of messages
+  _onCallbacks: [], // Array of callbacks to notify when we change _questions
 
+  // called once, initialize our service
   initialize: () => {
     setInterval(() => {
       SocketService._questions.push({text: "Q" + id, who: 'interlock', id: id++});
