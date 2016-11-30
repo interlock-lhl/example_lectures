@@ -13,4 +13,8 @@ Header.defaultProps = {
   title: 'Slack Question Bot'
 };
 
+Header.propTypes = {
+  title: React.PropTypes.string
+};
+
 export default Header;

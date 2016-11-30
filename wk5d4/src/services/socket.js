@@ -11,7 +11,7 @@ const SocketService = {
     setInterval(() => {
       SocketService._questions.push({text: "Q" + id, who: 'interlock', id: id++});
       SocketService.emit();
-    }, 1000)
+    }, 5000)
   },
 
   // subscribe to getting updates to questions
