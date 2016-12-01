@@ -1,3 +1,4 @@
+
 // Application entrypoint.
 
 // Load up the application styles
@@ -7,13 +8,11 @@ require("../styles/application.scss");
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/App.jsx';
+import SocketService from './services/socket.js';
 
-import { Provider } from 'react-redux'
-import store from './stores/app.jsx'
+SocketService.initialize();
 
 ReactDOM.render(
-  <Provider store={store}>
-    <App />
-  </Provider>,
-   document.getElementById('react-root')
+  <App />,
+  document.getElementById('react-root')
 );
