@@ -9,6 +9,26 @@
  - grouping of data and functionality
  - can be layered with 'inheritance' to extend existing classes
 
+# properties
+
+- own properties
+- enumerable vs none enumerable properties
+- Object.keys, Object.prototype.hasOwnProperty
+
+# prototypes
+
+- setPrototypeOf
+- chain and lookup
+- getPrototypeOf
+
+# constructors
+
+- constructor functions
+- new keyword
+- inheritance via prototype
+- instanceof
+- constuctor properties
+
 # Classes and Instances
 
 - Classes are light blueprints
