@@ -5,13 +5,17 @@ var id = 1;
 const SocketService = {
   _questions: [], // Array of messages
   _onCallbacks: [], // Array of callbacks to notify when we change _questions
+  _socket: null,
 
   // called once, initialize our service
   initialize: () => {
-    setInterval(() => {
-      SocketService._questions.push({text: "Q" + id, who: 'interlock', id: id++});
-      SocketService.emit();
-    }, 5000)
+    SocketService._socket = io.connect();
+    SocketService._socket.on('message', SocketService._handleMessage);
+  },
+
+  _handleMessage: (data) => {
+    SocketService._questions.push(data);
+    SocketService.emit();
   },
 
   // subscribe to getting updates to questions

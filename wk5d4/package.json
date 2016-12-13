@@ -54,6 +54,7 @@
     "react": "15.2.1",
     "react-dom": "15.2.1",
     "slack": "^8.1.1",
+    "socket.io": "^1.7.1",
     "webpack-dev-middleware": "^1.8.3"
   }
 }

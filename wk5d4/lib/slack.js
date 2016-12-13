@@ -28,7 +28,7 @@ class Slack extends EventEmitter {
   // handle messages, all messages come here
   _handleMessage(message) {
     var self = this;
-
+    console.log(message);
     // slack returns channel names and user names as unique identifiers, we need to look them up
     async.parallel([
       function(cb) {
@@ -41,7 +41,7 @@ class Slack extends EventEmitter {
       if (err) {
         return console.log(err);
       }
-      self.emit('message', { user: results[0], channel: results[1], text: message.text});
+      self.emit('message', { id: message.ts, user: results[0], channel: results[1], text: message.text});
     });
   }
 
@@ -49,6 +49,7 @@ class Slack extends EventEmitter {
   _getUser(user, cb) {
     if (this.users[user]) {
       setImmediate(cb, null, this.users[user]);
+      // cb(null, this.users[user]);
       return;
     }
     console.log('fetching user:', user);
@@ -56,6 +57,7 @@ class Slack extends EventEmitter {
       if (err) {
         return cb(err);
       }
+      // console.log(data);
       this.users[user] = data.user;
       cb(null, data.user);
     });

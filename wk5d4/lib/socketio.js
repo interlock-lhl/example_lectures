@@ -11,21 +11,16 @@ module.exports = {
 
   emit: function(type, data) {
     if (this.io) {
-      this.io.emit(type, data);
+      if (type === 'message' && data.text.match(/^Q:/i) ) {
+        this.io.emit(type, data);
+      }
+
       // this.io.apply(arguments)
     }
   },
 
   onConnection: function(socket) {
-    console.log(socket.id);
-    // let id = 1;
-    // setInterval(() => {
-    //   socket.emit('message', {
-    //     text: 'HEllo world',
-    //     username: 'james',
-    //     channel: 'lecture',
-    //     id: id++
-    //   });
-    // }, 1000)
+    console.log('client connected:', socket.id);
+
   }
 };
