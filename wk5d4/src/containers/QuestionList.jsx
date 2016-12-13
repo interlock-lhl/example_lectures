@@ -1,8 +1,8 @@
 import React, {Component} from 'react'
-import { connect } from 'react-redux'
 import Question from '../components/Question.jsx'
 
 class QuestionList extends Component {
+
   render() {
     var questions = this.props.questions.sort(function(a,b) {
       return a.id < b.id ? 1 : -1;
@@ -22,13 +22,4 @@ QuestionList.propTypes = {
   questions: React.PropTypes.array
 }
 
-const mapStateToProps = (state) => ({
-  questions: state.questions
-})
-
-const mapDispatchToProps = ({
-
-})
-
-
-export default connect(mapStateToProps, mapDispatchToProps)(QuestionList);
+export default QuestionList;

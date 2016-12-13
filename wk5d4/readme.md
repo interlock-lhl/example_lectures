@@ -16,3 +16,7 @@ Chat Reflector 9000
 - WebRTC streams a single client as a background for the main client
 - Overlay questions on top of WebRTC, fade over time
 - Give a link for WebRTC to channel when Chat Reflector 9000 comes around
+
+# Setup
+
+Create a .env file, put a SLACK_TOKEN in there with a token you create from here: https://api.slack.com/docs/oauth-test-tokens
