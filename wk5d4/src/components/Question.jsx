@@ -11,4 +11,10 @@ class Question extends Component {
   }
 }
 
+Question.propTypes = {
+  who: React.PropTypes.string,
+  text: React.PropTypes.string
+}
+
+
 export default Question;

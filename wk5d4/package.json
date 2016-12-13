@@ -4,7 +4,8 @@
   "description": "Simple and lightweight Boilerplate for ReactJS projects",
   "scripts": {
     "lint": "eslint src",
-    "start": "node server.js"
+    "start": "node server.js",
+    "dev": "nodemon server.js"
   },
   "repository": {
     "type": "git",
@@ -38,7 +39,6 @@
     "eslint": "2.7.0",
     "eslint-plugin-react": "5.2.2",
     "node-sass": "3.8.0",
-    "redux-devtools": "^3.3.1",
     "sass-loader": "4.0.0",
     "sockjs-client": "^1.1.1",
     "style-loader": "0.13.1",
@@ -53,8 +53,7 @@
     "express": "^4.14.0",
     "react": "15.2.1",
     "react-dom": "15.2.1",
-    "react-redux": "^4.4.5",
-    "redux": "^3.6.0",
+    "slack": "^8.1.1",
     "webpack-dev-middleware": "^1.8.3"
   }
 }
