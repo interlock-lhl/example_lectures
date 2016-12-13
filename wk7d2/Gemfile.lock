@@ -230,7 +230,7 @@ DEPENDENCIES
   capybara
   carrierwave
   dotenv-rails
-  factory_girl_rails
+  factory_girl_rails (~> 4.0)
   faker
   font-awesome-rails
   jbuilder (~> 2.0)
