@@ -1,5 +1,3 @@
-'use strict';
-
 const userProtoType = {
   fullName: function() {
     return this.first + " " + this.last;
